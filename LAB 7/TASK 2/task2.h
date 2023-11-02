@@ -7,21 +7,21 @@ using namespace std;
 class Weight
 {
 private:
-    const double kgToPound = 2.2;
+    const double kgToPound;
     int pound;
     double ounce;
 
 public:
-    Weight() : pound(0), ounce(0.0) {}
+    Weight() : pound(0), ounce(0.0), kgToPound(2.2) {}
 
-    Weight(int pound, double ounce) : pound(pound), ounce(ounce) {}
+    Weight(int pound, double ounce) : pound(pound), ounce(ounce), kgToPound(2.2) {}
 
     void showWeight()
     {
         cout << pound << "-" << ounce << " lbs" << endl;
     }
 
-    Weight(double kg)
+    Weight(double kg): kgToPound(2.2)
     {
         double totalPounds = kg * kgToPound;
         pound = static_cast<int>(totalPounds);
