@@ -21,7 +21,7 @@ public:
         }
     }
 
-    int getCount() {
+    int getCount() const {
         return count;
     }
 
@@ -33,7 +33,7 @@ public:
         count = 0;
     }
 
-    Counter operator +( Counter& other) const {
+    Counter operator +(const Counter& other) const {
         int c = count + other.count;
         int s = max(incrementStep, other.incrementStep);
         return Counter(c, s);
@@ -70,9 +70,11 @@ public:
     Counter operator ++() {
         return Counter(++count);
     }
+
+    friend void testFunction(const Counter&);
 };
 
-void testFunction(Counter& c) {
+void testFunction(const Counter& c) {
     cout << c.getCount();
 }
 

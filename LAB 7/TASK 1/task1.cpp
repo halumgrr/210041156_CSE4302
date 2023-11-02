@@ -10,7 +10,7 @@ int main() {
     cout << "Ami's grade: " << collection["Ami"] << endl;
     cout << "Tumi's grade: " << collection["Tumi"] << endl;
 
-    collection["Amii"] = 96.0;
+    collection["Amii"] = 96.0;//unchanged
 
     cout << "Updated Ami's grade: " << collection["Ami"] << endl;
 }
