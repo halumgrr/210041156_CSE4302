@@ -11,7 +11,7 @@ private:
     int MinBalance;
 
 public:
-    bankAccount()
+    void getinfo()
     {
         cout << "Enter name" << endl;
         cin >> name;

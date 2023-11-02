@@ -12,9 +12,9 @@ int main()
     //enumeration is finite set of information defined, increases readability
     //ex. days of the week, gender
 
-    enum gender{male, female = 10, third}; //these two are enumerators, internally represented as integer, so that'll be printed
+    enum gender{male, malee, female = 10, third}; //these two are enumerators, internally represented as integer, so that'll be printed
     gender p_gender;//10 is assigned to female, 11 is assigned to third
-    p_gender = female;
+    p_gender = malee;
     //gender k[10];
     enum days_of_the_week{sun, mon, tues, wed, thurs, fri, sat};
     cout << p_gender << endl;

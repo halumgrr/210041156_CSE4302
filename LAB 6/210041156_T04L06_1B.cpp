@@ -10,9 +10,10 @@ private:
     int height;
 
 public:
-    // Constructor
     ZooAnimal(string name, int birthYear, int cageNumber, float weight, int height)
         : nameOfAnimal(name), birthYear(birthYear), cageNumber(cageNumber), weightData(weight), height(height) {}
+
+    ZooAnimal(int n) : weightData(n) {}
 
     bool operator>(const ZooAnimal& other) const {
         return weightData > other.weightData;
@@ -43,9 +44,17 @@ public:
         return *this;
     }
 
+    /* Or
     ZooAnimal& operator-=(int value) {
         weightData -= value;
         return *this;
+    }
+    */
+    
+
+    ZooAnimal operator-=(int value) {
+        weightData -= value;
+        return ZooAnimal(weightData);
     }
 
     float getWeightData() const {
